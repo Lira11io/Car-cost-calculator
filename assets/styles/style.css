@@ -53,6 +53,16 @@
   align-items: center;
 }
 
+/*Изменение отступа после заголовка инпута с вводом объема двигателя*/
+.form__engine-capacity_title {
+  margin-bottom: 0;
+}
+
+/*Уточнение объема двигателя*/
+.form__engine-capacity_text {
+  margin-top: 0;
+}
+
 /*Список с выбором марки авто*/
 /*Список с выбором модели кузова*/
 .form__brand-item,

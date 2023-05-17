@@ -18,27 +18,50 @@
           <div class="form__brand">
             <h2 class="form__brand-title">Выберите марку автомобиля</h2>
             <select class="form__brand-item" name="brand">
-              <option value="Audi">Audi</option>
-              <option value="Aurus">Aurus</option>
-              <option value="Bentley">Bentley</option>
-              <option value="BMW">BMW</option>
-              <option value="Bugatti">Bugatti</option>
-              <option value="Chevrolet">Chevrolet</option>
-              <option value="Daewoo">Daewoo</option>
-              <option value="Dodge">Dodge</option>
-              <option value="Ford">Ford</option>
-              <option value="GAZ">GAZ</option>
-              <option value="Honda">Honda</option>
-              <option value="Isuzu">Isuzu</option>
-              <option value="Lada">Lada</option>
-              <option value="Lexus">Lexus</option>
-              <option value="Mercedes-Benz">Mercedes-Benz</option>
-              <option value="Opel">Opel</option>
+              <option value="" disabled selected>
+                Выберите марку автомобиля
+              </option>
+              <!-- <option value="Audi" data-price="390000">Audi</option>
+              <option value="Aurus" data-price="420000">Aurus</option>
+              <option value="Bentley" data-price="1000000">Bentley</option>
+              <option value="BMW" data-price="450000">BMW</option>
+              <option value="Bugatti" data-price="1500000">Bugatti</option>
+              <option value="Chevrolet" data-price="370000">Chevrolet</option>
+              <option value="Daewoo" data-price="360000">Daewoo</option>
+              <option value="Dodge" data-price="400000">Dodge</option>
+              <option value="Ford" data-price="430000">Ford</option>
+              <option value="GAZ" data-price="300000">GAZ</option>
+              <option value="Honda" data-price="380000">Honda</option>
+              <option value="Isuzu" data-price="385000">Isuzu</option>
+              <option value="Lada" data-price="350000">Lada</option>
+              <option value="Lexus" data-price="500000">Lexus</option>
+              <option value="Mercedes-Benz" data-price="670000">
+                Mercedes-Benz
+              </option>
+            <option value="Opel" data-price="380000">Opel</option> -->
+              <option value="380000">Opel</option>
+              <option value="390000">Audi</option>
+              <option value="420000">Aurus</option>
+              <option value="1000000">Bentley</option>
+              <option value="450000">BMW</option>
+              <option value="1500000">Bugatti</option>
+              <option value="370000">Chevrolet</option>
+              <option value="360000">Daewoo</option>
+              <option value="400000">Dodge</option>
+              <option value="430000">Ford</option>
+              <option value="300000">GAZ</option>
+              <option value="380000">Honda</option>
+              <option value="385000">Isuzu</option>
+              <option value="350000">Lada</option>
+              <option value="500000">Lexus</option>
+              <option value="670000">Mercedes-Benz</option>
+              <option value="380000">Opel</option>
             </select>
           </div>
           <div class="form__model">
             <h2 class="form__model-title">Выберите модель кузова</h2>
             <select class="form__model-item" name="model">
+              <option value="" disabled selected>Выберите модель кузова</option>
               <option value="Седан">Седан</option>
               <option value="Хэтчбек">Хэтчбек</option>
               <option value="Универсал">Универсал</option>
@@ -78,13 +101,16 @@
           </div>
           <div class="form__engine-capacity">
             <h2 class="form__engine-capacity_title">Введите объем двигателя</h2>
+            <p class="form__engine-capacity_text">от 1.1 литра до 3.5 литров</p>
             <label class="form__engine-capacity_item">
               <input
                 class="form__engine-capacity_item"
                 type="number"
+                name="capacity"
                 step="0.1"
                 min="1.1"
                 max="3.5"
+                value=""
                 placeholder="1.1"
               />
             </label>
@@ -142,6 +168,7 @@
             <button class="form__button_btn">Рассчитать</button>
           </div>
         </form>
+        <div class="container__total-cost"></div>
       </div>
     </div>
     <script src="index.js"></script>
