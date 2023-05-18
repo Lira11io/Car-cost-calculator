@@ -88,8 +88,14 @@ function calculateCost() {
   const condition = document.querySelector(
     'input[name="carCondition"]:checked'
   ).value;
-  const owner = document.querySelector('input[name="owner"]:checked').value;
   const method = document.querySelector('input[name="method"]:checked').value;
+
+  //прописываем условие расчета стоимости в зависимости от состояния авто
+  let owner = "one"; //значение по умолчанию, если блок с количеством владельцев неактивен
+  if (formOwner.style.display === "flex") {
+    // проверяем, активен ли блок с выбором количества владельцев
+    owner = document.querySelector('input[name="owner"]:checked').value;
+  }
 
   // вычисляем итоговую стоимость с учетом выбранных параметров
   let finalCost =
