@@ -3,7 +3,7 @@ const myForm = document.forms.myForm;
 const brandSelect = document.querySelector('select[name="brand"]');
 const modelSelect = document.querySelector('select[name="model"]');
 const fuelRadios = document.querySelectorAll('input[name="fuel"]');
-const capacityInput = document.querySelector('input[name="capasity"]');
+const capacityInput = document.querySelector('input[name="capacity"]');
 const carConditionRadios = document.querySelectorAll(
   'input[name="carCondition"]'
 );
@@ -31,15 +31,10 @@ myForm.addEventListener("change", () => {
 });
 
 //вешаем обработчик событий на кнопку
-button.addEventListener("submit", (evt) => {
+button.addEventListener("click", (evt) => {
   evt.preventDefault();
   calculateCost();
 });
-
-/* myForm.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  calculateCost();
-}); */
 
 //функция для рассчета итоговой стоимости
 function calculateCost() {
@@ -89,9 +84,7 @@ function calculateCost() {
   const brand = brandSelect.value;
   const model = modelSelect.value;
   const fuel = document.querySelector('input[name="fuel"]:checked').value;
-  //const capacity = +capacityInput.value; // преобразуем строку в число
-  //const capacity = parseFloat(capacityInput).value;
-  const capacity = Number(capacityInput.value);
+  const capacity = Number(capacityInput.value); //преобразуем полученную строку в число
   const condition = document.querySelector(
     'input[name="carCondition"]:checked'
   ).value;
@@ -109,6 +102,5 @@ function calculateCost() {
     paymentMethodCoef[method];
 
   // выводим итоговую стоимость на странице
-  totalCost.textContent = `Итоговая стоимость: ${finalCost} руб.`;
-  totalCost.innerHTML = `<p>Итоговая стоимость: ${finalCost} руб.</p>`;
+  totalCost.innerHTML = `<p class="container__total-cost_text">Итоговая стоимость: ${finalCost} руб.</p>`;
 }
