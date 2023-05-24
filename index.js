@@ -34,9 +34,31 @@ myForm.addEventListener("change", () => {
 button.addEventListener("click", (evt) => {
   evt.preventDefault();
   calculateCost();
+  //myForm.reset();//сбрасывваем поля формы после вывода итоговой стоимости(добавим после того, как напишу вывод вводимых данных)
 });
 
-//функция для рассчета итоговой стоимости
+//добавляем на инпут с объемом двигателя запрет на ввод с клавиатуры чисел меньше минимального и больше максимального
+capacityInput.addEventListener("input", () => {
+  const value = Number(capacityInput.value);
+  const max = Number(capacityInput.max);
+  const min = Number(capacityInput.min);
+
+  if (value > max) capacityInput.value = max;
+  else if (value < min) capacityInput.value = min;
+});
+
+/* const info = document.querySelector(".container__information");
+const createLayout = () => {
+  const block = document.createElement("div");
+  block.className = "container__information-brand";
+  block.textContent = ${brandSelect.value};
+};
+function infoUp() {
+  const b = createLayout
+info.uppend(b);
+} */
+
+//функция для расчета итоговой стоимости
 function calculateCost() {
   //определяем коэффициенты для разных моделей кузова
   let modelCoef = {
@@ -108,5 +130,7 @@ function calculateCost() {
     paymentMethodCoef[method];
 
   // выводим итоговую стоимость на странице
-  totalCost.innerHTML = `<p class="container__total-cost_text">Итоговая стоимость: ${finalCost} руб.</p>`;
+  totalCost.innerHTML = `<p class="container__total-cost_text">Итоговая стоимость: ${finalCost.toFixed(
+    1
+  )} руб.</p>`;
 }
